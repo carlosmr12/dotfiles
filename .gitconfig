@@ -1,0 +1,14 @@
+[user]
+	name = Carlos Rodrigues
+	email = carlosmr12@gmail.com
+
+[alias]
+	c = commit
+	s = status
+	ck = checkout
+	br = branch
+[color]
+	ui = true
+
+[core]
+    editor = 'vim'
