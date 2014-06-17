@@ -1,3 +1,12 @@
+
+"---------------------------------------------------------------------------
+" MAP TRICKS
+"disable arrow keys - cc Gagu
+noremap <Up>    :echo "YOU NOOB!"<cr>
+noremap <Down>  :echo "YOU NOOB!"<cr>
+noremap <Left>  :echo "YOU NOOB!"<cr>
+noremap <Right> :echo "YOU NOOB!"<cr>
+
 "---------------------------------------------------------------------------
 "       C/C++
 set makeprg=g++\ -Wall\ -Wextra\ -Wconversion\ -o\ %<\ % "Compile .c files 
@@ -12,16 +21,19 @@ map -- :s/^\(\s*\)#/\1/<CR>:nohlsearch<CR>
 "---------------------------------------------------------------------------
 
 set incsearch       " Incremental search
+set hlsearch 
 "set autowrite      " Automatically save before commands like :next and :make
 "set hidden             " Hide buffers when they are abandoned                  
 set mouse=a     " Enable mouse usage (all modes)
 set autoindent      " Identation
 set tabstop=4
+set smarttab
 set shiftwidth=4
 set expandtab
 set number
 set cursorline
 set cursorcolumn
+set nowrap
 
 map <Tab> :tabnext<CR>
 map <S-Tab> :tabprevious<CR>
@@ -60,3 +72,16 @@ function! Tab_Or_Complete()
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 set dictionary="/usr/dict/words"
+
+
+"Fuzzy sile search
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Configurações do vim-airline
+if isdirectory(expand($HOME . "/.vim/bundle/vim-airline/"))
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_powerline_fonts = 1
+    let g:airline_theme = "powerlineish"
+    set laststatus=2
+endif
+
