@@ -1,4 +1,3 @@
-
 "---------------------------------------------------------------------------
 " MAP TRICKS
 "disable arrow keys - cc Gagu
@@ -85,3 +84,17 @@ if isdirectory(expand($HOME . "/.vim/bundle/vim-airline/"))
     set laststatus=2
 endif
 
+function! RemoveBlankSpaces()
+    silent! :%s/\s*$//g
+    silent! noh
+endfunction
+
+map <C-m> :call RemoveBlankSpaces()<CR>
+
+" Powerline
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
